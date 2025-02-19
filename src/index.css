@@ -1,0 +1,63 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 346 75% 62%;
+    --primary-foreground: 355 100% 97%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 346 75% 62%;
+    --radius: 1rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border selection:bg-primary/10;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+
+  .glass-card {
+    @apply backdrop-blur-xl bg-white/5 border border-white/10 shadow-[0_8px_16px_-6px_rgba(0,0,0,0.5)];
+  }
+
+  .swipe-card-container {
+    @apply relative w-full max-w-md aspect-[3/4] rounded-2xl overflow-hidden;
+  }
+
+  .swipe-card {
+    @apply absolute inset-0 glass-card transition-transform duration-300 ease-out;
+  }
+
+  .swipe-buttons {
+    @apply fixed bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-4;
+  }
+
+  .nav-button {
+    @apply relative p-4 rounded-full glass-card hover:scale-110 transition-transform duration-200 text-white/80 hover:text-white;
+  }
+
+  .chat-message {
+    @apply p-3 rounded-2xl max-w-[80%] glass-card;
+  }
+}
